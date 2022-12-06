@@ -22,11 +22,6 @@ app.use((req, res, next) => {
 // Taks Api here
 app.use("/api/tasks", taskRoutes);
 
-// Base url req hare
-app.use("/", (req, res, next) => {
-  res.send("Test route successfull.");
-});
-
 // Wrong URL req handled here
 app.use((req, res, next) => {
   return next(new HttpError("Location not found", 404));
